@@ -1,14 +1,12 @@
-import styled from "styled-components";
-import wPawnSrc from "../assets/wPawn.png"; 
-import bPawnSrc from "../assets/bPawn.png"; 
+import wBishop from "../assets/wBishop.png"; 
+import bBishop from "../assets/bBishop.png"; 
 
-
-
-export default function Pawn(props){ 
-    let src = wPawnSrc;  
+export default function Bishop(props){ 
+    let src = wBishop;  
     if (props.color == 'black'){ 
-        src = bPawnSrc; 
+        src = bBishop; 
     }
+
     //This sets the position of the piece on the grid 
     const gridPlace = { 
         gridColumn: props.c, 
