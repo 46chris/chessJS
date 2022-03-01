@@ -7,14 +7,6 @@ import Knight from './knight';
 import Queen from './queen'; 
 import Rook from './rook'; 
 
-//Testing out Javascript style object
-// const myStyle = { 
-//     width: '100%', 
-//     maxWidth: '90vh',
-//     display:'block', 
-//     margin: 'auto'
-// }
-
 const Div = styled.div`
 width: min(100vw, 100vh); 
 height: min(100vw,100vh); 
@@ -31,6 +23,8 @@ display: grid;
 grid-template-columns: repeat(8, 1fr);
 grid-template-rows: repeat(8, 1fr);  
 `;  
+
+//https://www.semicolonworld.com/question/72710/react-0-13-this-getdomnode-equivalent-to-react-finddomnode
 
 export default function Board(props){
     return (
@@ -50,7 +44,6 @@ export default function Board(props){
             <Knight c={7} r={8} color="white"></Knight>
             <Rook c={8} r={8} color="white"></Rook>
 
-
             {/*Black*/}
             {
                 [1,2,3,4,5,6,7,8].map((index)=>{
@@ -65,8 +58,6 @@ export default function Board(props){
             <Bishop c={6} r={1} color="black"></Bishop>
             <Knight c={7} r={1} color="black"></Knight>
             <Rook c={8} r={1} color="black"></Rook>
-
-
         </Div>    
     )
 }
