@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import wPawnSrc from "../assets/wPawn.png"; 
 import bPawnSrc from "../assets/bPawn.png"; 
+import { useDrag } from "react-dnd"; 
 
 
 
@@ -9,14 +9,24 @@ export default function Pawn(props){
     if (props.color == 'black'){ 
         src = bPawnSrc; 
     }
-    //This sets the position of the piece on the grid 
-    const gridPlace = { 
-        gridColumn: props.c, 
-        gridRow: props.r, 
-        padding: "0.4vh"
-    }; 
+    const [{ isDragging }, drag] = useDrag(()=>({ 
+        type: 'Pawn', 
+        item: { 
+            name : props.name, 
+            color: props.color
+        },
+        collect: monitor => ({
+            isDragging: !!monitor.isDragging(), 
+        }),
+    }))
 
     return (
-        <div style={gridPlace}><img style={{display:'block', width:'100%', boxSizing:'border-box'}}src={src}></img></div>
+            <img ref={drag} style={{
+                display:'block', 
+                width:'100%', 
+                boxSizing:'border-box', 
+                transform: 'translate(0,0)',
+                opacity: isDragging ? 0: 1, 
+            }}src={src}></img>
     )
 }
