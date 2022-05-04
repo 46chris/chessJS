@@ -3,7 +3,7 @@ import bKing from "../assets/bKing.png";
 
 export default function King(props){ 
     let src = wKing;  
-    if (props.color == 'black'){ 
+    if (props.color === 'black'){ 
         src = bKing; 
     }
 
@@ -15,6 +15,6 @@ export default function King(props){
     }; 
 
     return (
-        <div style={gridPlace}><img style={{display:'block', width:'100%', boxSizing:'border-box'}}src={src}></img></div>
+        <div style={gridPlace}><img alt='king' style={{display:'block', width:'100%', boxSizing:'border-box'}}src={src}></img></div>
     )
 }

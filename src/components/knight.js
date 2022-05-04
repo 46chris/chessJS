@@ -3,7 +3,7 @@ import bKnight from "../assets/bKnight.png";
 
 export default function Knight(props){ 
     let src = wKnight;  
-    if (props.color == 'black'){ 
+    if (props.color === 'black'){ 
         src = bKnight; 
     }
 
